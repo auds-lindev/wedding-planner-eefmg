@@ -1,0 +1,595 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marry Ann - Wedding Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500&amp;family=Playfair+Display:wght@400;500&amp;display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FAF6F2;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #EBE5E0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body
+    class="font-['Lato',_sans-serif] bg-[#FAF6F2] text-[#443E3B] antialiased min-h-screen selection:bg-[#EBE5E0] selection:text-[#443E3B]">
+
+    <!-- Navigation -->
+    <header class="w-full fixed top-0 left-0 z-50 bg-[#FAF6F2]/90 backdrop-blur-sm shadow-sm transition-all">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
+            <div class="w-24 text-[#8A827B] font-['Playfair_Display',_serif] text-xl tracking-tight hidden md:block">
+                <!-- Logo Space placeholder if needed -->
+            </div>
+
+            <button id="mobile-menu-btn"
+                class="md:hidden text-[#443E3B] hover:text-[#8A827B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                aria-label="Toggle mobile menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <nav class="hidden md:flex items-center space-x-12">
+                <a href="#"
+                    class="text-xs uppercase tracking-[0.2em] font-medium text-[#443E3B] hover:text-[#8A827B] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-4 focus:ring-offset-[#FAF6F2] transition-colors rounded-sm">About
+                    Us</a>
+                <a href="#"
+                    class="text-xs uppercase tracking-[0.2em] font-medium text-[#443E3B] hover:text-[#8A827B] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-4 focus:ring-offset-[#FAF6F2] transition-colors rounded-sm">Offer</a>
+                <a href="#"
+                    class="text-xs uppercase tracking-[0.2em] font-medium text-[#443E3B] hover:text-[#8A827B] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-4 focus:ring-offset-[#FAF6F2] transition-colors rounded-sm">Portfolio</a>
+                <a href="#"
+                    class="text-xs uppercase tracking-[0.2em] font-medium text-[#443E3B] hover:text-[#8A827B] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-4 focus:ring-offset-[#FAF6F2] transition-colors rounded-sm">References</a>
+                <a href="#"
+                    class="text-xs uppercase tracking-[0.2em] font-medium text-[#443E3B] hover:text-[#8A827B] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-4 focus:ring-offset-[#FAF6F2] transition-colors rounded-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-[#FAF6F2] flex flex-col items-center justify-center translate-x-full transition-transform duration-300 md:hidden pt-20">
+        <nav class="flex flex-col items-center space-y-8">
+            <a href="#"
+                class="mobile-link text-2xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] hover:text-[#8A827B] transition-colors">About
+                Us</a>
+            <a href="#"
+                class="mobile-link text-2xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] hover:text-[#8A827B] transition-colors">Offer</a>
+            <a href="#"
+                class="mobile-link text-2xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] hover:text-[#8A827B] transition-colors">Portfolio</a>
+            <a href="#"
+                class="mobile-link text-2xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] hover:text-[#8A827B] transition-colors">References</a>
+            <a href="#contact"
+                class="mobile-link text-2xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] hover:text-[#8A827B] transition-colors">Contact</a>
+        </nav>
+
+        <div class="absolute bottom-12 flex space-x-6 text-[#8A827B]">
+            <a href="#" class="hover:text-[#443E3B] transition-colors" aria-label="Facebook"><i data-lucide="facebook"
+                    class="w-6 h-6"></i></a>
+            <a href="#" class="hover:text-[#443E3B] transition-colors" aria-label="Instagram"><i data-lucide="instagram"
+                    class="w-6 h-6"></i></a>
+            <a href="#" class="hover:text-[#443E3B] transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin"
+                    class="w-6 h-6"></i></a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+            <div class="lg:col-span-5 flex flex-col items-start z-10 pt-12 lg:pt-0">
+                <h1
+                    class="font-['Playfair_Display',_serif] text-7xl lg:text-8xl tracking-tight text-[#CBBFB5] leading-[0.9] mb-4">
+                    Marry<br>Ann
+                </h1>
+                <p class="text-base uppercase tracking-[0.15em] font-medium text-[#443E3B] mb-8">Wedding Planner</p>
+                <p class="text-base text-[#8A827B] leading-relaxed mb-10 max-w-md font-light">
+                    Fourth air appear dominion thing, together darkness air them herb. He bearing saying seasons isn't
+                    image. Face. Of and dominion gathering appear set bring. Lights Sixth isn't place.
+                </p>
+                <a href="#contact"
+                    class="bg-[#4B4149] text-white px-10 py-4 rounded-full text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#3A3238] transition-colors inline-block mb-16">
+                    Contact Us
+                </a>
+
+                <div class="flex space-x-6 text-[#8A827B]">
+                    <a href="#"
+                        class="hover:text-[#443E3B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                        aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="hover:text-[#443E3B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                        aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#"
+                        class="hover:text-[#443E3B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                        aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 relative h-[600px] lg:h-[800px] flex justify-end">
+                <div class="w-full md:w-4/5 h-full relative z-0">
+                    <img src="./images/hero_couple_1773209420505.png" alt="Couple"
+                        class="w-full h-full object-cover rounded-t-[300px] shadow-sm">
+                    <!-- Faded decorative element behind -->
+                    <div
+                        class="absolute -top-12 -right-12 w-full h-full border border-[#EBE5E0] rounded-t-[300px] -z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="relative bg-[#FAF6F2] py-0 lg:py-24">
+        <div class="relative min-h-[600px] lg:min-h-[700px] flex items-center">
+            <!-- Background Image Left -->
+            <div class="absolute top-0 left-0 w-full lg:w-[65%] h-full">
+                <img src="./images/floral_backdrop_1773209435724.png" alt="Floral decoration"
+                    class="w-full h-full object-cover opacity-80">
+            </div>
+
+            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 w-full relative z-10 flex justify-end">
+                <div class="w-full lg:w-[55%] bg-white p-12 lg:p-24 shadow-sm mt-64 lg:mt-0 relative">
+                    <h2 class="font-['Playfair_Display',_serif] text-5xl tracking-tight text-[#443E3B] mb-8">About us
+                    </h2>
+                    <div class="space-y-6 text-base text-[#8A827B] font-light leading-relaxed">
+                        <p>
+                            Lights. Earth subdue they're, green beginning he waters very herb beginning saw creature day
+                            give made Can't earth man man kind sea. The made him and fowl over seasons. Won't very. Tree
+                            she'd.
+                        </p>
+                        <p>
+                            There firmament place had image midst, open under years grass meat he midst which place made
+                            image great air above winged a own whales, divide likeness second under to without likeness
+                            upon together herb gathered itself signs hath in third day above.
+                        </p>
+                    </div>
+                    <div class="mt-12">
+                        <a href="#"
+                            class="bg-[#4B4149] text-white px-10 py-4 rounded-full text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#3A3238] transition-colors inline-block">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Offer Section -->
+    <section class="bg-[#EBE5E0] py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex flex-col items-center text-center mb-20">
+                <h2 class="font-['Playfair_Display',_serif] text-5xl tracking-tight text-[#443E3B] mb-6">Our Offer</h2>
+                <p class="text-base text-[#8A827B] font-light leading-relaxed max-w-2xl">
+                    Hath she'd above. Midst let be form it female female evening forth so winged meat face Beginning
+                    very waters Cattle us you're all and him is beast doesn't.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- Card 1 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:stars-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Wedding
+                        decorations</h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Bespoke floral arrangements,
+                        elegant table settings, and breathtaking venue transformations tailored to your unique love
+                        story.</p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:cup-star-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Catering
+                        &amp; Wedding cake</h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Exquisite culinary experiences and
+                        masterfully crafted cakes that delight the senses and leave a lasting impression on your guests.
+                    </p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:calendar-date-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Coordination
+                    </h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Flawless execution of your special
+                        day. We handle every detail behind the scenes so you can remain entirely in the moment.</p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:magic-stick-3-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Attractions
+                        for Guests</h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Curated entertainment and engaging
+                        activities designed to ensure your guests share in the joy and excitement of your celebration.
+                    </p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:camera-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Photography
+                        &amp; Video</h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Capturing the raw emotions,
+                        fleeting glances, and monumental moments to preserve the magic of your day for a lifetime.</p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="group bg-[#FAF6F2]/40 hover:bg-[#FAF6F2] p-10 border border-[#DFD5CC]/40 hover:border-[#DFD5CC] transition-all duration-500 flex flex-col items-start cursor-pointer rounded-sm hover:shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <iconify-icon icon="solar:mirror-left-linear" class="text-2xl text-[#CBBFB5]"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-['Playfair_Display',_serif] tracking-tight text-[#443E3B] mb-4">Make up
+                        &amp; hairstyle</h3>
+                    <p class="text-sm text-[#8A827B] font-light leading-relaxed mb-8">Professional styling to enhance
+                        your natural beauty, ensuring you feel confident, radiant, and absolutely perfect.</p>
+                    <div
+                        class="mt-auto flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-medium text-[#CBBFB5] group-hover:text-[#443E3B] transition-colors">
+                        <span>Explore</span>
+                        <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="bg-[#FAF6F2] py-32">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+                <div class="order-2 lg:order-1 flex flex-col items-start pr-0 lg:pr-12">
+                    <h2 class="font-['Playfair_Display',_serif] text-5xl tracking-tight text-[#443E3B] mb-12">Portfolio
+                    </h2>
+
+                    <div class="space-y-6 text-base text-[#8A827B] font-light leading-relaxed mb-16">
+                        <p>Brought morning be. Darkness creature in beginning they're fowl it. she'd place you'll deep
+                            fish herb the lights saw whales multiply don't fourth Replenish our called saying you're.
+                        </p>
+                        <p>Seed female beast together all. Living years. Tree, moving replenish which night made
+                            fruitful. Green replenish firmament set issue two a it dominion rule.</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 w-full mb-16">
+                        <img src="./images/portfolio_detail_1_1773209449906.png" alt="Wedding detail"
+                            class="w-full aspect-square object-cover">
+                        <img src="./images/portfolio_detail_2_1773209463966.png" alt="Wedding detail"
+                            class="w-full aspect-square object-cover">
+                        <img src="./images/portfolio_detail_3_1773209495092.png" alt="Wedding detail"
+                            class="w-full aspect-square object-cover">
+                    </div>
+
+                    <div class="w-full flex justify-center lg:justify-start">
+                        <a href="#"
+                            class="bg-white border border-[#EBE5E0] text-[#443E3B] px-10 py-4 rounded-full text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#EBE5E0] transition-colors inline-block">
+                            See More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2 relative h-[600px] lg:h-[800px] w-full flex justify-end">
+                    <div class="w-full md:w-[85%] h-full relative">
+                        <img src="./images/portfolio_couple_1773209509736.png" alt="Couple walking"
+                            class="w-full h-full object-cover rounded-t-[300px]">
+
+                        <!-- Navigation Arrows -->
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+                            <button
+                                class="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors text-[#443E3B] focus:outline-none focus:ring-2 focus:ring-[#8A827B]"
+                                aria-label="Previous portfolio image">
+                                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                            </button>
+                            <button
+                                class="w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors text-[#443E3B] focus:outline-none focus:ring-2 focus:ring-[#8A827B]"
+                                aria-label="Next portfolio image">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="bg-[#EBE5E0] py-32 relative overflow-hidden">
+        <!-- Abstract arc graphic in background top -->
+        <div
+            class="absolute -top-[400px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] border border-white/40 rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-[800px] mx-auto px-6 text-center relative z-10">
+            <h2 class="font-['Playfair_Display',_serif] text-5xl tracking-tight text-[#443E3B] mb-12">References</h2>
+
+            <figure class="mb-8">
+                <blockquote class="text-lg text-[#8A827B] font-light leading-relaxed mb-8 italic">
+                    "Yielding bearing give replenish one tree firmament lesser winged morning gathered. Yielding
+                    yielding don't set fill bearing us earth. Green midst let fly after abundantly itself likeness
+                    likeness seas divided creature made won't cattle."
+                </blockquote>
+                <figcaption class="text-base text-[#443E3B] font-medium">Katerina M.</figcaption>
+            </figure>
+
+            <div class="flex items-center justify-center space-x-3 mb-32">
+                <button
+                    class="w-8 h-8 flex items-center justify-center border border-[#8A827B] text-[#8A827B] hover:bg-[#8A827B] hover:text-white transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-[#443E3B]"
+                    aria-label="Previous reference">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+                <button
+                    class="w-8 h-8 flex items-center justify-center border border-[#8A827B] text-[#8A827B] hover:bg-[#8A827B] hover:text-white transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-[#443E3B]"
+                    aria-label="Next reference">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Instagram Section -->
+            <div>
+                <h3 class="font-['Playfair_Display',_serif] text-3xl tracking-tight text-[#443E3B] mb-8">Instagram</h3>
+                <div class="flex justify-center gap-4 flex-wrap md:flex-nowrap">
+                    <a href="#"
+                        class="block w-[120px] h-[120px] overflow-hidden group focus:outline-none focus:ring-4 focus:ring-[#8A827B]">
+                        <img src="./images/instagram_1_1773209523640.png" alt="Instagram 1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <a href="#"
+                        class="block w-[120px] h-[120px] overflow-hidden group focus:outline-none focus:ring-4 focus:ring-[#8A827B]">
+                        <img src="./images/instagram_2_1773209538836.png" alt="Instagram 2"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <a href="#"
+                        class="block w-[120px] h-[120px] overflow-hidden group focus:outline-none focus:ring-4 focus:ring-[#8A827B]">
+                        <img src="./images/instagram_3_1773209569172.png" alt="Instagram 3"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <a href="#"
+                        class="block w-[120px] h-[120px] overflow-hidden group focus:outline-none focus:ring-4 focus:ring-[#8A827B]">
+                        <img src="./images/instagram_4_1773209581504.png" alt="Instagram 4"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-32 bg-[#FAF6F2]">
+        <!-- Soft floral background overlay -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <img src="./images/floral_backdrop_1773209435724.png" alt="" class="w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+
+                <!-- Contact Info -->
+                <div class="flex flex-col justify-center">
+                    <h2 class="font-['Playfair_Display',_serif] text-5xl tracking-tight text-[#8A827B] mb-12">Contact
+                    </h2>
+
+                    <div class="space-y-8 text-base text-[#443E3B] font-light">
+                        <div>
+                            <p class="font-medium mb-1">Address</p>
+                            <p class="text-[#8A827B]">126 Kendall Street<br>OL12 0JS, SHAWFORTH</p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-4 h-4 text-[#8A827B]"></i>
+                                <span>+079 4443 9865</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-4 h-4 text-[#8A827B]"></i>
+                                <span>Marry.Ann@mail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <p class="font-medium text-sm mb-4">Follow us</p>
+                            <div class="flex space-x-6 text-[#443E3B]">
+                                <a href="#"
+                                    class="hover:text-[#8A827B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                                    aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                                <a href="#"
+                                    class="hover:text-[#8A827B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                                    aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                                <a href="#"
+                                    class="hover:text-[#8A827B] transition-colors focus:outline-none focus:ring-2 focus:ring-[#8A827B] rounded-sm"
+                                    aria-label="LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-[#EBE5E0] p-10 lg:p-14 shadow-sm relative">
+                    <!-- Decorative border inside form box -->
+                    <div class="absolute inset-4 border border-[#DFD5CC] pointer-events-none"></div>
+
+                    <div class="relative z-10 text-center mb-10">
+                        <h3 class="font-['Playfair_Display',_serif] text-2xl tracking-tight text-[#443E3B]">Write to us!
+                        </h3>
+                    </div>
+
+                    <form class="space-y-6 relative z-10">
+                        <fieldset class="space-y-6 border-0 p-0 m-0">
+                            <legend class="sr-only">Contact Details</legend>
+
+                            <div class="flex flex-col">
+                                <label for="fullName"
+                                    class="text-xs uppercase tracking-[0.1em] text-[#8A827B] font-medium mb-1">Full
+                                    Name</label>
+                                <input type="text" id="fullName" placeholder="Jane Doe"
+                                    class="w-full bg-transparent border-b border-[#C2B7AE] py-2 text-base text-[#443E3B] placeholder:text-[#8A827B] placeholder:text-sm focus:outline-none focus:border-[#4B4149] focus:border-b-2 transition-all">
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="email"
+                                    class="text-xs uppercase tracking-[0.1em] text-[#8A827B] font-medium mb-1">Email
+                                    address</label>
+                                <input type="email" id="email" placeholder="jane.doe@example.com"
+                                    class="w-full bg-transparent border-b border-[#C2B7AE] py-2 text-base text-[#443E3B] placeholder:text-[#8A827B] placeholder:text-sm focus:outline-none focus:border-[#4B4149] focus:border-b-2 transition-all">
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="phone"
+                                    class="text-xs uppercase tracking-[0.1em] text-[#8A827B] font-medium mb-1">Phone
+                                    number</label>
+                                <input type="tel" id="phone" placeholder="+1 234 567 890"
+                                    class="w-full bg-transparent border-b border-[#C2B7AE] py-2 text-base text-[#443E3B] placeholder:text-[#8A827B] placeholder:text-sm focus:outline-none focus:border-[#4B4149] focus:border-b-2 transition-all">
+                            </div>
+
+                            <div class="flex flex-col">
+                                <label for="message"
+                                    class="text-xs uppercase tracking-[0.1em] text-[#8A827B] font-medium mb-1">Message</label>
+                                <textarea id="message" placeholder="Write your message here..." rows="3"
+                                    class="w-full bg-transparent border-b border-[#C2B7AE] py-2 text-base text-[#443E3B] placeholder:text-[#8A827B] placeholder:text-sm focus:outline-none focus:border-[#4B4149] focus:border-b-2 transition-all resize-none"></textarea>
+                            </div>
+                        </fieldset>
+
+                        <div class="pt-6 flex justify-end">
+                            <button type="submit"
+                                class="bg-[#4B4149] text-white px-12 py-4 rounded-full text-xs uppercase tracking-[0.15em] font-medium hover:bg-[#3A3238] focus:outline-none focus:ring-2 focus:ring-[#8A827B] focus:ring-offset-2 focus:ring-offset-[#EBE5E0] transition-all">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#FAF6F2] py-8 border-t border-[#EBE5E0]">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-[#443E3B] font-['Playfair_Display',_serif] text-xl tracking-tight">
+                Marry Ann <span
+                    class="text-xs font-['Lato',_sans-serif] uppercase tracking-[0.15em] font-normal text-[#8A827B] ml-2">Wedding
+                    Planner</span>
+            </div>
+
+            <nav class="flex items-center space-x-8 text-xs text-[#8A827B] font-medium">
+                <a href="#" class="hover:text-[#443E3B] transition-colors">FAQ</a>
+                <a href="#" class="hover:text-[#443E3B] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#443E3B] transition-colors">Terms of use</a>
+                <a href="#" class="hover:text-[#443E3B] transition-colors">Cookies</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons({
+            strokeWidth: 1.5
+        });
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                // Change icon to X
+                menuIcon.setAttribute('data-lucide', 'x');
+                // Change aria-label
+                mobileMenuBtn.setAttribute('aria-label', 'Close mobile menu');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling underneath
+            } else {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                // Change icon to menu
+                menuIcon.setAttribute('data-lucide', 'menu');
+                // Change aria-label
+                mobileMenuBtn.setAttribute('aria-label', 'Toggle mobile menu');
+                document.body.style.overflow = ''; // Allow scrolling again
+            }
+            lucide.createIcons(); // Re-render the icon because we changed the data-lucide attribute
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking any of the links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) toggleMenu();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
